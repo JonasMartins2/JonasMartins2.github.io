@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor Web</title>
+
+    <link rel="icon" href="../Meu Site 2024/icone/icons8.png" type="image/x-icon">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            margin-top: 70px; /* Ajuste para deixar espaço para o header fixo */
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #4b0202;
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li:first-child {
+            margin-left: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Seções */
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #343a40;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-align: justify;
+            color: #555;
+        }
+
+        /* Formulário de Contato */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button[type="submit"] {
+            background-color: #4b0202;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4b0202;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffd700;
+        }
+
+        /* Ícone do WhatsApp */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px; /* Distância do ícone até a parte inferior da página */
+            right: 20px; /* Distância do ícone até a parte direita da página */
+            width: 60px;
+            height: 60px;
+            background-color: green; /* Cor de fundo do ícone */
+            border-radius: 50%; /* Formato do ícone circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #fff; /* Cor do ícone */
+            font-size: 24px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+            z-index: 1000; /* Certifica-se de que o ícone fica em cima de outros elementos */
+        }
+
+        .whatsapp-icon:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        /* Imagem do Desenvolvedor */
+        .developer-image {
+            width: 200px;
+            border-radius: 20%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ícone do Instagram */
+        .instagram-icon {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .instagram-icon i {
+            margin-right: 10px;
+        }
+
+        .instagram-icon:hover {
+            color: #e4405f;
+        }
+
+        .pparagráfo{
+            text-align: center;
+        }
+
+        .slider{
+            align-items: center;
+            
+            font-size: 10px;
+            
+            
+        }
+
+
+       
+
+  .btn-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #128c7e;
+  }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Desenvolvedor Web</div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Quem sou eu?</a></li>
+                    <li><a href="#portfolio">Informações</a></li>
+                    
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Jonas Martins</h2>
+            <img src="imagem/jonas-martins.jpeg" alt="Foto do Desenvolvedor" class="developer-image">
+            <p>Olá! Meu nome é <strong>Jonas Martins de Souza Santos</strong>, sou um desenvolvedor web apaixonado por criar experiências digitais incríveis. Estou sempre em busca de novos desafios e aprendendo novas tecnologias para oferecer as melhores soluções aos meus clientes.</p>
+
+            <p>
+                Minha jornada no desenvolvimento web me proporcionou um amplo conjunto de habilidades, desde a construção de sites responsivos e intuitivos até a implementação de funcionalidades complexas com as mais recentes tecnologias. Minha abordagem combina criatividade e conhecimento técnico, resultando em soluções web que atendem às necessidades específicas de cada projeto.
+                <br />
+                <br />
+                Como profissional, estou comprometido em oferecer um serviço excepcional, trabalhando em estreita colaboração com meus clientes para entender suas visões e objetivos. Minha missão é superar expectativas, entregando projetos que não apenas atendam, mas excedam as metas estabelecidas.
+                <br />
+                <br />
+                Se você está buscando um desenvolvedor web dedicado, criativo e orientado para resultados, estou aqui para ajudar a transformar sua visão em uma presença digital impressionante. Vamos colaborar para criar algo verdadeiramente extraordinário.</p>
+
+            <!-- Ícone do Instagram -->
+            <a href="https://www.instagram.com/progamador_apps_web?igsh=bW9oeHAzZWZvOWg3" target="_blank" class="instagram-icon">
+                <i class="fab fa-instagram"></i>
+                Siga-me no Instagram
+            </a>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Mais Informações</h2>
+            <div class="slider" align="center">
+                <div><img src="slides/ai-generated-8684869_1280.jpg" alt="Projeto 1" height="200" width="400"></div>
+                <div><img src="slides/code-2434271_1280.jpg" alt="Projeto 2" height="200" width="400"></div>
+                <div><img src="slides/coding-924920_1280.jpg" alt="Projeto 3" height="200" width="400"></div>
+                <div><img src="slides/developer-3461405_1280 (1).png" alt="Projeto 4" height="200" width="400"></div>
+                <div><img src="slides/frontend-4342425_1280.png" alt="Projeto 5" height="200" width="400"></div>
+                <div><img src="slides/html5-386614_1280.jpg" alt="Projeto 6" height="200" width="400"></div>
+                <!-- Adicione mais imagens conforme necessário -->
+            </div>
+
+            <p>
+                <strong> Jonas Martins - Desenvolvedor Web</strong>
+                <br />
+                <br />
+                Olá! Meu nome é Jonas Martins e sou um apaixonado desenvolvedor web. Trabalho para criar experiências digitais incríveis, desde websites simples até aplicativos web complexos.
+
+                <br />
+                <br />
+
+                <strong>Sobre Mim</strong>
+
+                <br />
+                <br />
+
+                Sou um desenvolvedor web autodidata com mais de cinco anos de experiência na criação de soluções digitais inovadoras. Minha jornada começou com a paixão por resolver problemas e a curiosidade em aprender novas tecnologias. Ao longo dos anos, aprimorei minhas habilidades em HTML, CSS, JavaScript e frameworks populares como React e Vue.js.
+
+                Estou sempre em busca de desafios interessantes que me permitam expandir meu conhecimento e contribuir para projetos que fazem a diferença.
+
+                <br />
+                <br />
+
+                <strong>Habilidades</strong>
+
+                <br />
+                <br />
+
+                <strong>Linguagens de Programação:</strong> HTML, CSS, JavaScript<br />
+                <strong>Frameworks e Bibliotecas:</strong> React.js, Vue.js, Bootstrap<br />
+                <strong>Ferramentas de Desenvolvimento:</strong> Visual Studio Code, Git, npm<br />
+                <strong>Design Responsivo e UX/UI:</strong> Garantir que meus projetos sejam acessíveis e tenham uma ótima experiência do usuário em diferentes dispositivos.
+
+               
+                <br />
+                <br />
+
+                <strong>Contato</strong>
+
+                <br />
+                <br />
+
+                Estou sempre aberto a novas oportunidades e colaborações. Se você está interessado em trabalhar comigo ou apenas quer bater um papo sobre desenvolvimento web, não hesite em entrar em contato.
+
+                <br />
+                <br />
+
+                <strong>Email:</strong> desenvolvedorweb534@gmail.com
+                <br />
+                Ficarei feliz em ouvir de você!
+            </p>
+        </div>
+    </section>
+
+    
+
+    <section id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p class="pparagráfo">Ficou interessado no meu trabalho? Entre em contato comigo:</p>
+                <a href="https://api.whatsapp.com/send?phone=5561982023900&text=Ol%C3%A1%2C%20quero%20agendar%20um%20servi%C3%A7o.%F0%9F%98%80" class="btn-whatsapp">Fale no WhatsApp</a>
+              </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="pparagráfo">Entre em contato conosco: desenvolvedorweb534@gmail.com <br /> Telefone: (61) 9 8202-3900</p>
+            <p class="pparagráfo">&copy; 2024 Desenvolvido por Jonas Martins, Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Ícone do WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=5561982023900&text=Ol%C3%A1%2C%20quero%20agendar%20um%20servi%C3%A7o.%F0%9F%98%80" class="whatsapp-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp (Font Awesome) -->
+      </a>
+      
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // Smooth Scroll
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+
+        // Enviar formulário
+        $('#contact-form').submit(function(e) {
+            e.preventDefault();
+            alert("Enviado com sucesso! Em breve entrarei em contato.");
+        });
+
+        // Inicializar o carrossel de imagens
+        $(document).ready(function(){
+            $('.slider').slick({
+                autoplay: true, // Auto reprodução
+                autoplaySpeed: 2000, // Velocidade de reprodução (ms)
+                dots: true, // Mostrar pontos de navegação
+                arrows: false // Ocultar setas de navegação
+            });
+        });
+    </script>
+</body>
+</html>
